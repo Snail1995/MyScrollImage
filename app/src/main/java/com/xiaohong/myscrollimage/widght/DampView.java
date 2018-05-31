@@ -66,14 +66,16 @@ public class DampView extends ScrollView {
         }
         currentX = event.getX();
         currentY = event.getY();
+        // 一个控件在其父窗口中的坐标位置
         imageView.getLocationInWindow(li);
+        // 一个控件在其整个屏幕上的坐标位置
         getLocationOnScreen(li2);
         imageView.getTop();
         switch (action) {
             case MotionEvent.ACTION_DOWN:
                 if (li[1] != li2[1]) {// 判断开始触摸时，imageview和窗口顶部对齐没
-                startIsTop = false;
-            }
+                    startIsTop = false;
+                }
                 left = imageView.getLeft();
                 top = imageView.getBottom();
                 rootW = getWidth();
